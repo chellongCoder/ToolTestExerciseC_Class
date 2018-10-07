@@ -61,14 +61,14 @@ void TestSumOfNumberDouble(CuTest *tc) {
     float input;
     printf("input> ");
     scanf("%f", &input);
-    double actual = SumOfNumberDouble(input);
+    float actual = SumOfNumberDouble(input);
     float expected;
     printf("expected> ");
     scanf("%f", &expected);
     CuAssertDblEquals(tc, expected, actual, 1);
 }
    
-    CuSuite* StrUtilGetSuite() {
+    CuSuite* TestUtilGetSuite() {
         CuSuite* suite = CuSuiteNew();
         printf("you choice input that is typeof integer | float | string? \n");
         int choice;
