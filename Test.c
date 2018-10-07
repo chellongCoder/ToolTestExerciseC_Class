@@ -29,9 +29,9 @@ float SumOfNumberDouble(float number) {
 }
     void TestStr(CuTest *tc) {
         char input[50];
-        
+        char test[20];
         printf("nhap test case : ");
-        fflush(stdin);
+        gets(test);
         gets(input);
         printf("testcase> %s\n", input);
 //        fflush(stdin);
@@ -72,30 +72,26 @@ void TestSumOfNumberDouble(CuTest *tc) {
         CuSuite* suite = CuSuiteNew();
         printf("you choice input that is typeof integer | float | string? \n");
         int choice;
-        do{
-            printf("======Menu=======\n");
-            printf("1. integer\n");
-            printf("2. float\n");
-            printf("3. string\n");
-            printf("0. ket thuc\n");
-            printf("CHOICE> ");
-            scanf("%d", &choice);
-            //        fflush(stdin);
-            switch (choice) {
-                case 1:
-                    SUITE_ADD_TEST(suite, TestSumOfNumberInteger);
-                    break;
-                case 2:
-                    SUITE_ADD_TEST(suite, TestSumOfNumberDouble);
-                    break;
-                case 3:
-                    SUITE_ADD_TEST(suite, TestStr);
-                    break;
-                case 0 : exit(0);
-                default:
-                    break;
-            }
-        }while(true);
+        printf("======Menu=======\n");
+        printf("1. integer\n");
+         printf("2. float\n");
+         printf("3. string\n");
+         printf("CHOICE> ");
+        scanf("%d", &choice);
+//        fflush(stdin);
+        switch (choice) {
+            case 1:
+                SUITE_ADD_TEST(suite, TestSumOfNumberInteger);
+                break;
+            case 2:
+                SUITE_ADD_TEST(suite, TestSumOfNumberDouble);
+                break;
+            case 3:
+                SUITE_ADD_TEST(suite, TestStr);
+                break;
+            default:
+                break;
+        }
 //        SUITE_ADD_TEST(suite, TestSumOfNumberDouble);
         return suite;
     }
